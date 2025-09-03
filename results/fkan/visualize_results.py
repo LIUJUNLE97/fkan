@@ -1,0 +1,21 @@
+import numpy as np 
+pred = np.load('pred_output_50.npy')
+target = np.load('target_output_50.npy')
+# Calculate the mean squared error
+from plot_results_func import plot_mean_std_cp, plot_fluctuation_power_spectrum, plot_cp, plot_cd, plot_cl, plot_ins_snap_Cp
+plot_mean_std_cp(pred, target)
+plot_fluctuation_power_spectrum(pred, target, point_No=4, fs=400, nperseg=256)
+#plot_fluctuation_power_spectrum(pred, target, point_No=8, fs=400, nperseg=256)
+#plot_fluctuation_power_spectrum(pred, target, point_No=10, fs=400, nperseg=256)
+#plot_fluctuation_power_spectrum(pred, target, point_No=17, fs=400, nperseg=256)
+#plot_fluctuation_power_spectrum(pred, target, point_No=21, fs=400, nperseg=256)
+#plot_fluctuation_power_spectrum(pred, target, point_No=23, fs=400, nperseg=256)
+#plot_cp(pred, target, point_No=4)
+plot_cp(pred, target, point_No=8)
+#plot_cp(pred, target, point_No=10)
+#plot_cp(pred, target, point_No=17)
+#plot_cp(pred, target, point_No=21)
+#plot_cp(pred, target, point_No=23)
+plot_cd(pred, target)
+plot_cl(pred, target)
+plot_ins_snap_Cp(pred, target, snapid=983)

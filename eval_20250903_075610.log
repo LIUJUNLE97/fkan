@@ -1,0 +1,4 @@
+/home/ljl198957/anaconda3/envs/pytorch/lib/python3.10/site-packages/scipy/__init__.py:155: UserWarning: A NumPy version >=1.18.5 and <1.26.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+/workspace/ljl/Pressure_forecasting/FKAN/eval_fkan.py:35: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  data_input = torch.tensor(val_dataset[50][0]).unsqueeze(0).to(device).float()  # 1, 26, 1000
