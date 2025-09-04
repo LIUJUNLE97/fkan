@@ -9,13 +9,14 @@ import torch.fft
 # -----------------------------
 # Fourier-Kolmogorov–Arnold Network (FKAN) for 1D time-series (B, T, C)
 # Base: Spectral (Fourier) operator over time + KAN-style univariate basis nonlinearity
-# Author: Junle Liu, Yanyu Ke, Wenliang Chen, Tianle Niu, K.T. Tse, Gang Hu
+# Author: Junle Liu, Yanyu Ke, Haoyan Li, Wenliang Chen, Tianle Niu, K.T. Tse, Gang Hu
 # -----------------------------
 
 
 class SpectralConv1d(nn.Module):
     """
     1D spectral convolution over the time axis using learned complex weights for low modes.
+    Only applied to low modes
 
     Input shape: (B, C_in, T)
     Output shape: (B, C_out, T)
@@ -23,7 +24,7 @@ class SpectralConv1d(nn.Module):
 
     def __init__(self, in_channels: int, out_channels: int, modes: int):
         super().__init__()
-        self.in_channels = in_channels
+        self.in_channels = in_channels # the pressure taps number  26 here 
         self.out_channels = out_channels
         self.modes = modes
         # Learnable complex weights for positive frequencies [0..modes-1]
