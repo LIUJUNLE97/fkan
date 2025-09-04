@@ -45,7 +45,7 @@ def plot_mean_std_cp(pred, target):
     mean_target = np.mean(target, axis=0)
     std_target = np.std(target, axis=0)
 
-    fig, ax = plt.subplots(figsize=(8, 6), dpi=600)
+    fig, ax = plt.subplots(figsize=(6, 4), dpi=600)
     x = np.arange(1, 27)  # 空间点编号
 
 
